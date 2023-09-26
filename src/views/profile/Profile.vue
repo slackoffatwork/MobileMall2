@@ -57,7 +57,7 @@
     <!-- 菜单模块 -->
     <div class="menu">
       <div class="m-list">
-        <span><router-link to="/">地址管理 ></router-link></span>
+        <span><router-link to="/addressList">地址管理 ></router-link></span>
         <span><router-link to="/wallet">我的钱包 ></router-link></span>
         <span><router-link to="/">我的优惠 ></router-link></span>
         <span><router-link to="/">我的收藏 ></router-link></span>

@@ -1,7 +1,7 @@
 // axios 二次封装
 import axios from 'axios'
 const request = axios.create({
-    baseURL: 'http://localhost:8081',
+    baseURL: 'http://120.27.128.112:8082',
     timeout: 5000
 })
 

@@ -106,7 +106,7 @@ export default {
                 previewImgUrl: "https://img01.yzcdn.cn/vant/apple-4.jpg", // 用于预览显示的规格类目图片
               },
               {
-                id: "1",
+                id: "2",
                 name: "蓝色",
                 imgUrl: "https://img01.yzcdn.cn/vant/apple-3.jpg",
                 previewImgUrl: "https://img01.yzcdn.cn/vant/apple-3.jpg",
@@ -118,9 +118,16 @@ export default {
         // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合
         list: [
           {
-            id: 2259, // skuId
+            id: 1, // skuId
             s1: "1", // 规格类目 k_s 为 s1 的对应规格值 id
-            s2: "1", // 规格类目 k_s 为 s2 的对应规格值 id
+            s2: "2", // 规格类目 k_s 为 s2 的对应规格值 id
+            price: 100, // 价格（单位分）
+            stock_num: 110, // 当前 sku 组合对应的库存
+          },
+          {
+            id: 2, // skuId
+            s1: "1", // 规格类目 k_s 为 s1 的对应规格值 id
+            s2: "2", // 规格类目 k_s 为 s2 的对应规格值 id
             price: 100, // 价格（单位分）
             stock_num: 110, // 当前 sku 组合对应的库存
           },
