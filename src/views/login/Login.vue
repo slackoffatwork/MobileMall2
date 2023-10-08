@@ -1,8 +1,8 @@
 <!--
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-19 18:06:00
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-09-21 20:40:41
+ * @LastEditors: “YZ” “929876936@qq.com”
+ * @LastEditTime: 2023-10-09 00:57:34
  * @FilePath: \my-project\src\views\login\Login.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -35,7 +35,7 @@
       </van-cell-group>
       <van-cell-group>
         <van-field
-          v-model="password"
+          v-model="captcha"
           name="验证码"
           label="验证码"
           placeholder="验证码"
@@ -57,24 +57,42 @@
 </template>
 
 <script>
+import {mapState,mapMutations,mapAction,mapGetters } from 'vuex'
+import { reqVerifCodeImage } from '@/api';
+
 export default {
   name: "Login",
   data() {
     return {
       username: "",
       password: "",
-      img: "http://localhost:8081/getVerifCodeImage",
+      captcha:"",
+      img:"",
     };
   },
+  mounted(){
+    this.$store.dispatch('getVerifCodeImageUrl')
+  },
   methods: {
+    // 登录 提交前端用户数据
     onSubmit(values) {
       console.log("submit", values);
       this.$router.push("/");
     },
+    // 登录 刷新验证码图片
     changeVerifCodeImage(){
-      this.$toast("验证码已更新");
-    }
+      var num=Math.ceil(Math.random()*10);
+      this.img = `${this.verifCodeImageValue}?` + num
+    },
   },
+  computed:{
+    ...mapState({
+      verifCodeImageUrl: state => state.login.verifCodeImageUrl
+    }),
+    verifCodeImageValue(){
+      return this.img = this.verifCodeImageUrl || ''
+    }
+  }
 };
 </script>
 

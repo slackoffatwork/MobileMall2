@@ -63,7 +63,7 @@
     <!-- 商品信息导航 -->
     <van-goods-action>
       <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
-      <van-goods-action-icon icon="cart-o" text="购物车" @click="urlChange"/>
+      <van-goods-action-icon icon="cart-o" text="购物车" @click="addCart"/>
       <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
       <van-goods-action-button type="warning" text="加入购物车" @click="addCart"/>
       <van-goods-action-button type="danger" text="立即购买" />
@@ -206,11 +206,8 @@ export default {
     onClickRight() {
       this.$router.push("/search");
     },
-    urlChange(){
-      this.$router.push("/cart") 
-    },
     addCart(){
-      this.$toast("添加购物车成功")                           
+      this.$router.push("/cart")                 
     }
   },
   mounted() {},

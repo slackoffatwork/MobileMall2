@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-18 15:13:59
  * @LastEditors: “YZ” “929876936@qq.com”
- * @LastEditTime: 2023-09-26 21:06:08
+ * @LastEditTime: 2023-10-08 00:54:08
  * @FilePath: \my-project\src\main.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -40,6 +40,8 @@ Vue.use(Notify);
 Vue.use(Lazyload);
 Vue.use(Radio);
 Vue.use(RadioGroup);
+// 测试接口
+import { reqVerifCodeImage } from './api';
 
 
 new Vue({
